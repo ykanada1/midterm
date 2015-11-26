@@ -1,0 +1,90 @@
+$baseFontSize: 18px;
+
+@mixin paddingZero(){
+  padding: 0;
+}
+@mixin marginZero(){
+  margin: 0;
+}
+@mixin marginPaddingZero(){
+  @include paddingZero();
+  @include marginZero();  
+}
+@mixin smallFontSize(){
+  font-size: 80%;
+}
+@mixin normalFontSize(){
+  font-size: 100%;
+}
+@mixin largeFontSize(){
+  font-size: 144%;
+}
+@mixin xLargeFontSize(){
+  font-size: 200%;
+}
+@mixin flexBox(){
+  display: flex;
+  align-items: center;
+}
+@mixin container(){
+  padding: .25rem 2rem;
+}
+@mixin holizontalList(){
+  display: block;
+  @include marginPaddingZero();
+}
+@mixin holizontalListItem(){
+  display: inline-block;
+  list-style: none;
+  @include marginZero();
+}
+
+html{
+  font-size: $baseFontSize;
+}
+body{
+  @include marginPaddingZero();
+}
+nav{
+  @include smallFontSize();
+  @include container();
+  box-shadow: 0px 0px 1px #333;
+
+  @include flexBox();
+
+  h1{
+    @include normalFontSize();
+    flex-grow: 1;
+  }
+  
+  ul{
+    @include holizontalList();
+    flex-grow: 0;
+  }
+
+  li{
+    @include holizontalListItem();
+
+    &:after{
+      content: "|";
+      margin: 0;
+    }
+    &:last-child:after{
+      content: "";
+    }
+  }
+  a{
+    display: inline-block;
+    padding: 0.5rem;
+  }
+}
+
+#mocha{
+  font-size: $baseFontSize;
+  @include marginZero();
+  @include container();
+}
+
+#mocha-stats{
+  position: relative;
+}

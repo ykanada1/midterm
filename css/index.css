@@ -1,0 +1,17 @@
+.container{
+  padding: 0 2rem 4rem 2rem;
+}
+h2{
+  font-size: 144%;
+  color: #111;
+}
+img{
+  display: block;
+  margin: .5rem 0;
+}
+ol > li{
+  margin-bottom: 1rem;
+}
+ol ul{
+  margin: 1rem 0;
+}
